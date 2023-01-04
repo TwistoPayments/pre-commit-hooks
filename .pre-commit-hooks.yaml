@@ -1,0 +1,15 @@
+- id: poetry-check
+  name: Poetry check
+  description: Checks Validity of the pyproject.toml file
+  entry: poetry check
+  language: system
+  pass_filenames: false
+  files: pyproject.toml
+
+- id: poetry-lock-check
+  name: Poetry lock check
+  description: Validates consistency between pyproject.toml and poetry.lock.
+  entry: poetry lock --check
+  language: system
+  pass_filenames: false
+  files: '^(pyproject\.toml|poetry\.lock)$'
